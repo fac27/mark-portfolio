@@ -1,6 +1,10 @@
+![image](https://user-images.githubusercontent.com/32879360/217068775-1f55fa60-5146-4d50-ad08-32dcf8d5a3ba.png)
+
 ## 1. Structure a site using semantic HTML to aid accessibility
+This project involved using semantic HTML elements to structure the site and take advantage of default browser behaviour as well as accessibility tools.
 
 ## 2. Ensure a web page is readable for screen readers
+In addition to semantic HTML, the project made estensive use of ARIA properties and states in order to optimise its screen reader performance.
 
 ## 3. Ensure our UI has sufficient colour contrast so that everyone can perceive it comfortably
 
