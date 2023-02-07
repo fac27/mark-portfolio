@@ -37,11 +37,42 @@ function openAccessibilityMenu(event) {
 The slide-out accessibility menu includes options to change the page theme to light, dark, colour or monochrome. This was to allow for users to select enhanced contrast according to their accessibility requirements. In all themes, contrast ratios exceed 4.5:1 and so are [WCAG compliant](https://wcag.com/designers/1-4-3-color-contrast/). This [short video](https://user-images.githubusercontent.com/32879360/217236427-cd9b5288-9bac-48cb-9fcd-69655913bffe.webm) demonstrates switching themes.
 
 ## 4. Use various tools to check that our website meets accessibility criteria
+The site is checked for accessibility criteria compliance using the Chrome browser's Lighthouse tool and received a 100% score.
 
 ## 5. Use CSS media queries to ensure our content is always presented effectively on screens of different sizes
+Media queries are used sparingly where necessary to adapt the screen layout for different screen sizes.
+```css
+@media only screen and (min-width: 768px) {
+    .width-small {
+        max-width: 20rem;
+    }
 
+    .width-medium {
+        max-width: 40rem;
+    }
+
+    .width-large {
+        max-width: 60rem;
+    }
+
+    .contact-form {
+        width: 30%;
+        min-width: 24rem;
+    }
+
+}
+```
 ## 6. Demonstrate a mobile-first approach to building a website
-
+The site makes use of default layouts for mobile screens and adapts this as viewport size increases.
+```css
+/* 
+Set all 'width-<size>' CSS classes to 95% of screen width by default
+e.g. .width-small, .width-medium, .width-large ...
+*/
+[class*="width-"] {
+    max-width: 95%;
+}
+```
 ## 7. Use CSS variables to apply repeated colours to HTML elements
 
 ## 8. Use CSS Flexbox to style children in a single-direction layout (ie a row or a column)
