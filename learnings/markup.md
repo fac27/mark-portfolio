@@ -132,6 +132,7 @@ The 'Meet the team' section uses a simple grid layout.
 ```
 ## 10. Ensure our Git commit history tells a coherent story
 An brief excerpt from the commit history of a single file:
+
 ![carlmarks-commit-history-example](https://user-images.githubusercontent.com/32879360/217241861-3360cce0-5069-41a1-87e4-b74b176033d6.png)
 
 ## 11. Use the appropriate input types in HTML forms for gathering different types of information
