@@ -34,8 +34,7 @@ function openAccessibilityMenu(event) {
 ```
 
 ## 3. Ensure our UI has sufficient colour contrast so that everyone can perceive it comfortably
-The slide-out accessibility menu includes options to change the page theme to light, dark, colour or monochrome. This was to allow for users to select enhanced contrast according to their accessibility requirements. In all themes, contrast ratios exceed 4.5:1 and so are [WCAG compliant](https://wcag.com/designers/1-4-3-color-contrast/). This video demonstrates the themes available:
-[layout-issue.webm](https://user-images.githubusercontent.com/32879360/217236099-8f90136d-480f-4aac-8109-1d3d7148dc58.webm)
+The slide-out accessibility menu includes options to change the page theme to light, dark, colour or monochrome. This was to allow for users to select enhanced contrast according to their accessibility requirements. In all themes, contrast ratios exceed 4.5:1 and so are [WCAG compliant](https://wcag.com/designers/1-4-3-color-contrast/). This [short video](https://user-images.githubusercontent.com/32879360/217236427-cd9b5288-9bac-48cb-9fcd-69655913bffe.webm) demonstrates switching themes.
 
 ## 4. Use various tools to check that our website meets accessibility criteria
 
