@@ -131,5 +131,20 @@ The 'Meet the team' section uses a simple grid layout.
 }
 ```
 ## 10. Ensure our Git commit history tells a coherent story
+![carlmarks-commit-history-example](https://user-images.githubusercontent.com/32879360/217241861-3360cce0-5069-41a1-87e4-b74b176033d6.png)
 
 ## 11. Use the appropriate input types in HTML forms for gathering different types of information
+Input types were chosen to make use of default browser functionality and to improve code readability.
+```html
+<form id="contact-form" class="contact-form">
+  <div class="form-element-container stack-small">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" aria-label="Name input"required>
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" name="company" placeholder="Company name" aria-label="Company Name input" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email input" required>
+    <button class="form-button" type="submit" aria-label="Submit contact form">Submit</button>
+  </div>
+</form>
+```
