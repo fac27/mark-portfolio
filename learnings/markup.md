@@ -74,11 +74,62 @@ e.g. .width-small, .width-medium, .width-large ...
 }
 ```
 ## 7. Use CSS variables to apply repeated colours to HTML elements
+Extensive use of CSS variables was made to apply display themes and font sizes to the page. This enabled easy integration with the accessibility menu and would allow future contributors to add more themes.
+```css
+/* Set up page theme colour variables */
+[data-theme="colour"] {
+    --main-bg-colour: rgb(62, 68, 80);
+    --main-text-colour: #fff;
+    --main-bg-colour-opacity-zero: rgba(62, 68, 80, 0);
+    --team-text-colour: #000;
+    --team-bg-colour1: rgb(171, 212, 226);
+    --team-bg-colour2: rgb(255, 155, 155);
+    --team-bg-colour3: rgb(195, 255, 195);
+    --form-bg-colour: rgb(191, 182, 199);
+    --form-text-colour: #000;
+    --form-invalid-colour: #F00;
+}
 
+[data-theme="dark"] {
+    --main-bg-colour: #000;
+    --main-text-colour: #fff;
+    --main-bg-colour-opacity-zero: rgba(0, 0, 0, 0);
+    --team-text-colour: rgb(255, 255, 255);
+    --team-bg-colour1: rgb(55, 69, 73);
+    --team-bg-colour2: rgb(107, 64, 64);
+    --team-bg-colour3: rgb(65, 85, 65);
+    --form-bg-colour: rgb(97, 90, 102);
+    --form-text-colour: #fff;
+    --form-invalid-colour: #F00;
+}
+```
 ## 8. Use CSS Flexbox to style children in a single-direction layout (ie a row or a column)
-
+The site uses simple flexbox layout to achieve a responsive layout.
+```css
+header {
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 20px;
+    top: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, var(--main-bg-colour) 0%, var(--main-bg-colour), var(--main-bg-colour-opacity-zero) 100%);
+    height: 25vh;
+}
+```
 ## 9. Use CSS Grid to style children in two-direction layout
-
+The 'Meet the team' section uses a simple grid layout.
+```css
+.team-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 0.5rem;
+    width: 100%;
+}
+```
 ## 10. Ensure our Git commit history tells a coherent story
 
 ## 11. Use the appropriate input types in HTML forms for gathering different types of information
