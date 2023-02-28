@@ -70,18 +70,100 @@ allQueryStrings.map((qs) =>
           })
       )
  ```
-### 7. Use the filter array method to create a new array with certain values removed
+### 7. Use the reduce array method to create a new array with certain values removed
+The project used the Array.reduce() method to summarise crime data according to any categories such as 'crime type' or 'data of crime':
+```JavaScript
+const summary = allCrimes.reduce((tally, allCrimes) => {
+      if (tally[allCrimes[field]]) {
+        tally[allCrimes[field]] += 1;
+      } else {
+        tally[allCrimes[field]] = 1;
+      }
 
+      return tally;
+    }, {});
+    return summary;
+```
 ### 8. Access DOM nodes using a variety of selectors
-
+Access to DOM nodes was used extensively to update data on the page.
+```JavaScript
+const crimeInfoOutput = document.querySelector('#output__crime');
+const crimeChartOverlay = document.querySelector('#crime__chart--large');
+```
 ### 9. Add and remove DOM nodes to change the content on the page
-
+This was also used extensively within the project...
+```JavaScript
+  const pieChartHeading = document.createElement('h3');
+  pieChartHeading.textContent = pieChartTitle;
+  const barChartHeading = document.createElement('h3');
+  barChartHeading.textContent = barChartTitle;
+  const pieChartDescription = document.createElement('p');
+  pieChartDescription.id = 'pie-desc';
+  pieChartDescription.className = 'screen-reader-only';
+  pieChartDescription.innerText = getPieChartDescription(crimes);
+  
+  // ...
+  
+  crimeInfoOutput.append(crimeInfoDiv);
+  crimeInfoOutput.append(barChartHeading);
+  crimeInfoOutput.append(barChart);
+  crimeInfoOutput.append(barChartDescription);
+  crimeInfoOutput.append(pieChartHeading);
+  crimeInfoOutput.append(pieChart);
+  crimeInfoOutput.append(pieChartDescription);
+```
 ### 10. Toggle the classes applied to DOM nodes to change their CSS properties
-
+This was used for example in enabling the user to click on a data chart graphic to zoom it to full screen...
+```JavaScript
+function toggleChartToFullScreen(image) {
+  crimeChartOverlay.style.backgroundImage = 'url(' + image.src + ')';
+  crimeChartOverlay.style.display = 'block';
+}
+```
 ### 11. Use consistent layout and spacing
+The site was constructed with a mobile-first design methodology. It was optimised for small screens and then enhanced for larger viewports...
+```css
+/* Set all 'width-<size>' CSS classes to 90% of viewport width by default
+e.g. .width-small, .width-medium, .width-large ... */
+[class*='width-'] {
+  max-width: 90vw;
+}
+
+/* Override screen width mobile-first settings for larger viewports */
+@media only screen and (min-width: 821px) {
+  .width-small {
+    max-width: 20rem;
+  }
+
+  .width-medium {
+    max-width: 40rem;
+  }
+
+  .width-large {
+    max-width: 60rem;
+  }
+```
 
 ### 12. Follow a spacing guideline to give our app a consistent feel
+Some use was made of css layout primitives to aid consistent and structured styling...
+```css
+.stack-s > * + * {
+  margin-top: 0.5rem;
+}
 
+.stack-m > * + * {
+  margin-top: 1.5rem;
+}
+
+.stack-xl > * + * {
+  margin-top: 4rem;
+}
+```
 ### 13. Debug client side JS in our web browser
+In-browser debugging was employed throughout development, for example to peek into JS object data.
 
 ### 14. Use console.log() to help us debug our code
+Debugging through the following methods was used...
+console.log()
+console.table()
+console.error()
