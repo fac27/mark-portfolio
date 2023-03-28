@@ -1,8 +1,8 @@
 # Testing portfolio
 
-![image](https://user-images.githubusercontent.com/32879360/228196408-e094a5a9-320d-4148-9b29-98cea245af81.png)
+### TuDo - a personal productivity app for managing tasks
 
-TuDo - a personal productivity app for managing tasks
+![image](https://user-images.githubusercontent.com/32879360/228196408-e094a5a9-320d-4148-9b29-98cea245af81.png)
 
 ## 1. Check that passing a given input into our tests returns the expected output
 
@@ -77,11 +77,53 @@ function runTests(){
 
 ## 3. Write testable, modular functions
 
+The app was designed from the beginning to be modular and testable. Two main JS classes stored state and logic for the 'tasks'. These were instantiated in the main app entry point and their methods called in response to user input or testing. Here is an example TaskCollection class and sample methods:
 
+```javascript
+export class TaskCollection {
+  constructor() {
+    this.allTasks = [];
+  }
+
+  addTask(task) {
+    this.allTasks.push(task);
+    this.saveAllTasksToStorage();
+  }
+
+  deleteTask(index) {
+    this.allTasks.splice(index, 1);
+    this.saveAllTasksToStorage();
+  }
+
+  editTask(index, newDescription, newStatus) {
+    let currentTask = this.allTasks[index];
+    currentTask.description = newDescription;
+    currentTask.status = newStatus;
+
+    this.saveAllTasksToStorage();
+  }
+```
 
 ## 4. Write functions that add, remove or modify DOM nodes
 
+DOM manipulation was a mainstay of this project. It was used to display tasks and control how they are styled. As an example, the following function allows the user to toggle between a light and dark theme which is controlled by a 'data-theme' HTML attribute on the root element:
 
+```javascript
+function toggleTheme(event) {
+  const element = event.srcElement;
+  const bodyElement = document.querySelector("body");
+
+  const currentTheme = bodyElement.getAttribute("data-theme");
+
+  if (currentTheme === "light") {
+    element.innerHTML = "&#9728";
+    bodyElement.setAttribute("data-theme", "dark");
+  } else {
+    element.innerHTML = "&#9790";
+    bodyElement.setAttribute("data-theme", "light");
+  }
+}
+```
 
 ## 5. Apply event listeners to HTML form elements
 
